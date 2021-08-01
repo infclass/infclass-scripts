@@ -63,6 +63,7 @@ ask_configuration()
 
 	read_yes_no CONFIGURE_REPO "Configure advanced options" no
 	if [ "$CONFIGURE_REPO" = "yes" ]; then
+		read_yes_no VERBOSE_BUILD "Verbose build" no
 		read_not_null REPOSITORY_URL "Repository URL"
 		read_not_null REPOSITORY_BRANCH "Repository branch"
 	fi
@@ -84,6 +85,7 @@ save_configuration()
 	echo "EC_OUTPUT_LEVEL=$EC_OUTPUT_LEVEL" >> "$TARGET_CONF"
 
 	echo "CONFIGURE_REPO=\"$CONFIGURE_REPO\"" >> "$TARGET_CONF"
+	echo "VERBOSE_BUILD=\"$VERBOSE_BUILD\"" >> "$TARGET_CONF"
 	echo "REPOSITORY_URL=\"$REPOSITORY_URL\"" >> "$TARGET_CONF"
 	echo "REPOSITORY_BRANCH=\"$REPOSITORY_BRANCH\"" >> "$TARGET_CONF"
 	
