@@ -27,5 +27,5 @@ if [ "$CURRENT_BRANCH" != "$REPOSITORY_BRANCH" ]; then
 	git checkout -f $REPOSITORY_BRANCH
 fi
 
-git reset --hard origin/$REPOSITORY_BRANCH
+git reset --hard FETCH_HEAD
 git clean -dfx
