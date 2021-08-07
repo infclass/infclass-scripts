@@ -34,7 +34,7 @@ do
 	echo "The server exited with code $RESULT"
 	RESTART_DELAY=${SUCCESS_DELAY}
 
-	if ((RESULT != 0))
+	if (($RESULT != 0))
 	then
 		RESTART_DELAY=${FAILURE_DELAY}
 	fi
