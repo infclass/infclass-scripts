@@ -8,7 +8,7 @@ SCRIPTS_PATH=$(dirname $SCRIPT)
 mkdir -p "$WORK_DIR"
 cd "$WORK_DIR"
 
-if [ ! -d "$SOURCE_DIR_NAME" ] || [ ! -L "$SOURCE_DIR_NAME" ]; then
+if [ ! -d "$SOURCE_DIR_NAME" ] && [ ! -L "$SOURCE_DIR_NAME" ]; then
 	read -p "The source dir (${WORK_DIR}/${SOURCE_DIR_NAME}) does not exist. Clone the repository? [Y/n]? " yn
 	case "$yn" in
 		[Nn]* ) exit;;
