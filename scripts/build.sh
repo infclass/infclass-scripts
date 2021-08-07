@@ -19,4 +19,4 @@ cmake "$SOURCE_DIR" \
 	$CMAKE_VERBOSE_OPTION \
 	-DCMAKE_CXX_FLAGS=-rdynamic
 
-cmake --build . -t install
+cmake --build . --target install
