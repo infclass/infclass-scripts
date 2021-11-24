@@ -21,7 +21,9 @@ cd "$SOURCE_DIR"
 
 git fetch origin $REPOSITORY_BRANCH
 
-CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+# The ' || true' is needed for the cases of a detached HEAD
+# "fatal error: ref HEAD is not a symbolic ref"
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD || true)
 
 if [ "$CURRENT_BRANCH" != "$REPOSITORY_BRANCH" ]; then
 	git checkout -f $REPOSITORY_BRANCH
