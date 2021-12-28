@@ -19,6 +19,7 @@ fi
 
 cd "$SOURCE_DIR"
 
+git fetch $REPOSITORY_URL --tags --prune
 git fetch $REPOSITORY_URL $REPOSITORY_BRANCH
 
 # The ' || true' is needed for the cases of a detached HEAD
