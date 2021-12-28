@@ -26,7 +26,8 @@ git fetch $REPOSITORY_URL $REPOSITORY_BRANCH
 CURRENT_BRANCH=$(git symbolic-ref --short HEAD || true)
 
 if [ "$CURRENT_BRANCH" != "$REPOSITORY_BRANCH" ]; then
-	git checkout -f $REPOSITORY_BRANCH
+	git branch -D $REPOSITORY_BRANCH || true
+	git checkout -b $REPOSITORY_BRANCH FETCH_HEAD
 fi
 
 git reset --hard FETCH_HEAD
