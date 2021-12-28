@@ -19,7 +19,7 @@ fi
 
 cd "$SOURCE_DIR"
 
-git fetch origin $REPOSITORY_BRANCH
+git fetch $REPOSITORY_URL $REPOSITORY_BRANCH
 
 # The ' || true' is needed for the cases of a detached HEAD
 # "fatal error: ref HEAD is not a symbolic ref"
