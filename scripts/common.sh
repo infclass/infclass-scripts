@@ -9,7 +9,12 @@ if [ -f "$CONF_PATH/local.conf" ]; then
 	. "$CONF_PATH/local.conf"
 fi
 
-if [ x"$CONF" = "x" ] && [ x"$1" != "x" ]; then
+if [ x"$COMMAND_WITH_ARGS" = x"1" ]; then
+	if [ x"$CONF" = "x" ]; then
+		echo "Configuration must be pre-set for this command via CONF env var"
+		exit 1
+	fi
+elif [ x"$CONF" = "x" ] && [ x"$1" != "x" ]; then
 	CONF="$1"
 	echo "Configuration: '$CONF'"
 fi

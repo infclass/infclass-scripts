@@ -1,12 +1,9 @@
 #!/bin/sh
 
-if [ x"$CONF" = "x" ]; then
-	echo "Configuration must be pre-set for this command via CONF env var"
-	exit 1
-fi
-
 SCRIPT=$(readlink -f $0)
 SCRIPTS_PATH=$(dirname $SCRIPT)
+
+COMMAND_WITH_ARGS=1
 
 . $SCRIPTS_PATH/common.sh
 
