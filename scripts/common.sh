@@ -10,6 +10,10 @@ if [ -f "$CONF_PATH/local.conf" ]; then
 fi
 
 if [ x"$COMMAND_WITH_ARGS" = x"1" ]; then
+	if [ x"$CONF" = "x" ] && [ x"$USE_DEFAULT_CONF_WITH_ARGS" = x"yes" ]; then
+		CONF="$DEFAULT_CONF"
+	fi
+
 	if [ x"$CONF" = "x" ]; then
 		echo "Configuration must be pre-set for this command via CONF env var"
 		exit 1
