@@ -59,7 +59,7 @@ econ()
 get_log_file()
 {
 	GEN_GAME_CFG="$INSTALL_DIR/$CONF-generated.cfg"
-	if [[ ! -e "$GEN_GAME_CFG" ]]; then
+	if [ ! -e "$GEN_GAME_CFG" ]; then
 		echo_error "Config file \"$GEN_GAME_CFG\" is not accessible"
 		exit 1
 	fi
