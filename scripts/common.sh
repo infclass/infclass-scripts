@@ -45,7 +45,7 @@ SOURCE_DIR_NAME="sources"
 SOURCE_DIR="$WORK_DIR/$SOURCE_DIR_NAME"
 BUILD_DIR="$WORK_DIR/build"
 INSTALL_DIR="$WORK_DIR/install"
-LOG_DIR="logs"
+LOG_DIR="$HOME/.teeworlds/$CONF/logs"
 
 EXTRA_GAME_CFG="$ROOT_DIR/game-conf/$CONF.cfg"
 
@@ -63,6 +63,6 @@ get_log_file()
 		echo_error "Config file \"$GEN_GAME_CFG\" is not accessible"
 		exit 1
 	fi
-	LOGFILE=$INSTALL_DIR/$(grep Logfile "$GEN_GAME_CFG"|cut -f 2- -d ' ')
+	LOGFILE=$(grep Logfile "$GEN_GAME_CFG"|cut -f 2- -d ' ')
 	echo $LOGFILE
 }
