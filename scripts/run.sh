@@ -28,7 +28,7 @@ while true
 do
 	$SCRIPTS_PATH/generate-cfg.sh $CONF
 
-	catchsegv ./${SERVER_EXECUTABLE} -f $GEN_GAME_CFG
+	./${SERVER_EXECUTABLE} -f $GEN_GAME_CFG
 	RESULT=$?
 
 	echo "The server exited with code $RESULT"
