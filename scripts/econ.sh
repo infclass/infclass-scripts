@@ -9,3 +9,4 @@ COMMAND_WITH_ARGS=1
 
 COMMAND=$@
 printf "$EC_PASSWORD\n$COMMAND\n" | nc $EC_CONNADDR $EC_PORT -q 1
+exit $?
