@@ -15,10 +15,13 @@ fi
 CONF_EXISTED=false
 CONF_IS_DEFAULT=false
 
-if [ x"$1" = "x" ]; then
-	CONF="$DEFAULT_CONF"
-else
+if [ x"$1" != "x" ]; then
 	CONF="$1"
+	echo "Configuration: '$CONF'"
+elif [ x"$CONF" != "x" ]; then
+	echo "Configuration: '$CONF'"
+else
+	CONF="$DEFAULT_CONF"
 fi
 
 if [ x"$CONF" = "xlocal" ] || [ x"$CONF" = "xglobal" ] || [ x"$CONF" = "xconf" ] || [ x"$CONF" = "xscripts" ]; then
