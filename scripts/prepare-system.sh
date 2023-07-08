@@ -9,6 +9,7 @@ prepare_debian()
 	installPackages+=(g++)
 	installPackages+=(zlib1g-dev)
 	installPackages+=(libicu-dev)
+	installPackages+=(libsqlite3-dev)
 	installPackages+=(libmaxminddb-dev)
 
 	installPackages+=(screen)
