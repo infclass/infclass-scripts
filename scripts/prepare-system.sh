@@ -5,10 +5,12 @@ prepare_debian()
 	installPackages+=(git)
 
 	installPackages+=(cmake)
+	installPackages+=(ninja-build)
 	installPackages+=(pkg-config)
 	installPackages+=(g++)
 	installPackages+=(zlib1g-dev)
 	installPackages+=(libicu-dev)
+	installPackages+=(libcurl4-openssl-dev)
 	installPackages+=(libsqlite3-dev)
 	installPackages+=(libmaxminddb-dev)
 
