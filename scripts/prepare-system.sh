@@ -13,6 +13,7 @@ prepare_debian()
 	installPackages+=(libcurl4-openssl-dev)
 	installPackages+=(libsqlite3-dev)
 	installPackages+=(libmaxminddb-dev)
+ 	installPackages+=(libpng-dev)
 
 	installPackages+=(screen)
 
